@@ -63,13 +63,106 @@ namespace ListsPractice
             //    }
             //}
 
-            //Contains
-            List<string> faveFoods = new List<string>() { "Steak", "fish", "katsudon", "Ice cream", "nachos" };
-            if(faveFoods.Contains("Steak"))
+            //Contains method
+            //List<string> faveFoods = new List<string>() { "Steak", "fish", "katsudon", "Ice cream", "nachos" };
+            //if(faveFoods.Contains("Steak"))
+            //{
+            //    Console.WriteLine("I like steak");
+            //}
+
+            //Create a list with the following numbers: 1 23 9 77 922 6 32 63 14 5 
+            //use the contains method with the following values: 23 77 15
+            //remove these elements: 22 77 32 and 6
+            //use Contains() again on these values: 23 77 15
+            //List<int> numbers = new List<int>() { 1, 23, 23, 9, 77, 922, 6, 32, 63, 14, 5 };
+            //if (numbers.Contains(23))
+            //{
+            //    Console.WriteLine("The list contains 23");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The list does not contain 23");
+            //}
+            //if (numbers.Contains(77))
+            //{
+            //    Console.WriteLine("The list contains 77");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The list does not contain 77");
+            //}
+            //if (numbers.Contains(15))
+            //{
+            //    Console.WriteLine("The list contains 15");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The list does not contain 15");
+            //}
+            ////only removes the first one
+            //numbers.Remove(23);
+            //numbers.Remove(77);
+            //numbers.Remove(32);
+            //numbers.Remove(6);
+            //if (numbers.Contains(23))
+            //{
+            //    Console.WriteLine("The list contains 23");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The list does not contain 23");
+            //}
+            //if (numbers.Contains(77))
+            //{
+            //    Console.WriteLine("The list contains 77");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The list does not contain 77");
+            //}
+            //if (numbers.Contains(15))
+            //{
+            //    Console.WriteLine("The list contains 15");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The list does not contain 15");
+
+            //}
+
+            //Ask the user for a movie 
+            //if the movie is not in the list add it 
+            //inform the user that the movie has been added 
+            //if the movie is in the list inform the movie that the movie is on the list
+            //if the user enters quit the program should exit
+            //the user should be able to add as many movies as they want
+
+            List<string> movies = new List<string>();
+            string newMovie;
+            do
             {
-                Console.WriteLine("I like steak");
+                Console.WriteLine("Enter the movie you would like to order");
+                newMovie = Console.ReadLine();
+                if(newMovie.ToLower() == "quit")
+                {
+                    continue;
+                }
+                else if (movies.Contains(newMovie))
+                {
+                    Console.WriteLine(newMovie + " is on the list");
+                }
+                else
+                {
+                    movies.Add(newMovie);
+                    Console.WriteLine(newMovie + " has been added to the list.");
+                }
             }
-          
+            while (newMovie.ToLower() != "quit");
+            Console.WriteLine("Thank you for ordering. Below is the current list of movies:");
+            foreach (string currentMovie in movies)
+            {
+                Console.WriteLine(currentMovie);
+            }
         }
     }
 }
